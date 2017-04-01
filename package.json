@@ -1,0 +1,22 @@
+{
+  "name": "scss-tut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itaydafna/SCSS-tut.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itaydafna/SCSS-tut/issues"
+  },
+  "homepage": "https://github.com/itaydafna/SCSS-tut#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.2"
+  },
+  "scripts": {
+    "start": "node-sass -o css scss"
+  }
+}
