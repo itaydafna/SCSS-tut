@@ -1,45 +1,19 @@
-.spiderman {
-    padding: 1rem 2rem;
-    transition: transform .8s ease-in-out;
-}
+.women-of-the-marvel-universe {
+  content: "women-of-the-marvel-universe"; }
 
-.spiderman-container {
-    background-color: #dbbebe;
-}
+.women-of-the-marvel-universe-text {
+  color: #989898; }
 
-.spiderman-container:hover .spiderman {
-    transform: rotate(180deg);
-}
+.women-of-the-marvel-universe-cape {
+  color: #8465d9; }
 
-.spiderman::before {
-    display: block;
-    content: url("http://www.gifs-paradise.com/animations/animated-gifs-spiders-147.gif");
-}
+img {
+  border: 1px dotted red; }
 
-.spiderman img {
-    transition: transform .8s ease-in-out;
-}
+.elektra {
+  color: blue;
+  border: 1px solid purple;
+  font-size: 36px; }
 
-.spiderman img:hover {
-    transform: rotate(360deg);
-}
-
-.spiderman .description {
-    color: darkred;
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.spiderman .description .header {
-    font-size: 2rem;
-}
-
-.spiderman .description-link {
-    text-decoration: none;
-}
-
-.spiderman .description-link::after {
-    content: url("http://www.hkpro.com/forum/customavatars/avatar11229_2.gif");
-    display: inline-block;
-    vertical-align: middle;
-}
+.fancy {
+  color: red; }

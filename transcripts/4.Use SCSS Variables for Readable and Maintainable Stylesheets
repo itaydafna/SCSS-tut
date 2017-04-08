@@ -1,0 +1,11 @@
+Use SCSS Variables for Readable and Maintainable Stylesheets
+
+Updating the same color or metric multiple times is no fun. SCSS variables improve maintainability by allowing one name to represent a value that can be used anywhere. SCSS variables also give us the power of creating our own naming conventions to express the intent of specific values. In this lesson we learn how to use SCSS variables to assign user friendly names to colors/metrics so one value change will update that value in all the right places.
+
+Variable names start with a dollar sign. We can name them with alphanumeric characters, underscores, or hyphens, but the first character after the dollar can't be a number or it's invalid. If we want to change all the green values to blue, we could update them all by hand, or we could use a variable instead. Let's compile, cool. When we need to update the value again, there's only one place to do it.
+
+When we nest variables, they have block scope and when we run the compiler, it worked. If we try to use the Elektra variable outside of the Elektra class, we get an error. Let's go ahead and try it anyway. Here's our error, Elektra is undefined.
+
+We can also override variables. Let's compile. Captain Marvel is red in all these instances, but its blue inside the block scope. Variables allow us to create naming conventions specific to our needs. We can create brand-specific color variables or font-related variables. We can even use variables in variables, and we can use them in any file just as long as they're imported before the files that actually use them.
+
+Let's give Elektra a font size so we can use a font size variable. Let's compile, check out the CSS. SASS variables can also be interpolated. This makes it easier to reuse verbose text -- let's compile -- and it really helps with naming conventions. To review, we can use alphanumeric characters, underscores, and hyphens to name variables. They allow us to update repeated values in one place. They can be block scoped, overridden, and interpolated.
