@@ -1,0 +1,32 @@
+Organize SCSS into Multiple Files with Partials
+
+Tired of dealing with monolithic CSS files? Are requests for multiple CSS files hurting your performance? In this lesson we learn how to separate our styles with SCSS partials, and how SCSS imports compile to one file so there's only one request.
+
+
+Our main SESS file compiles the CSS. Main CSS is in our index .html, and we have a red class on an H1. Cool, let's make a partial.
+
+We tell the compiler this is a partial by prepending an underscore to the name of the file. Let's add a style to the new partial. Update the html with the blue class and import the new partial in our main SESS. Notice that we can import without an underscore or a file extension. This is the convention, and it's more concise.
+
+When we compile, we can see the blue class from the partial file is in the CSS file. In the DevTools network tab, we can see there was one request made for main CSS. This is pretty cool because every time we import with CSS, a request is made for that resource.
+
+Let's make a new CSS file. Imported it in the main CSS and refresh the browser. Notice that we have two CSS requests, main CSS and other CSS. Also, the other CSS import doesn't get requested until after the main CSS is done downloading, which can hurt performance.
+
+The reason there's only one request with the SAS import is because all the styles, including imports, get compiled to CSS. Whereas, a CSS import doesn't get compiled. Yes, we can import a CSS file in a SAS file, but it will still be treated like a CSS import.
+
+Let's compile and refresh the browser. When we look in our main CSS, we still have a CSS import. There's still CSS files getting called in the browser, and other CSS is still waiting until main CSS downloads, and then, it gets requested.
+
+Let's make a new SESS file, but we're not going to prepend an underscore. When we import the partial in the main SESS and compile, we can see that the style from the partial was included in the main CSS. But also, a new CSS file was generated.
+
+Generally, this isn't the behavior we want, which is why we prepend an underscore to partial filenames. It's important to note that order matters with SAS imports.
+
+Let's make another partial, and let's make sure we get our underscore in there first. If we want to overwrite the blue class from partial A, partial B needs to come after the partial with the old blue class.
+
+When we refresh the browser, we can see the new blue class has overridden the old blue class. When we look in our main CSS, the new blue class comes after the old blue class.
+
+If we want to use something from a different partial, like a variable, the partial with the variable needs to precede the partial where it's being used. Let's make a variable in partial B and use it in partial A.
+
+When we compile, we get an error because partial B is after partial A, so the compiler doesn't know what the yellow variable is. When we reverse the partial order, let's compile and refresh the browser, it works.
+
+To review, prepend partial names with an underscore, but import them without the underscore or file extension. CSS imports create additional resource requests and they don't get compiled.
+
+Again, we got the main CSS, and the other CSS. SAS imports get compiled into one file. Import order matters, whether we're overriding styles or using styles from a different file.

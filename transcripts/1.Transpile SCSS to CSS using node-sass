@@ -1,0 +1,4 @@
+Transpile SCSS to CSS using node-sass
+
+In this lesson we learn how to set up SCSS and transpile your SCSS code into CSS with node-sass.
+
