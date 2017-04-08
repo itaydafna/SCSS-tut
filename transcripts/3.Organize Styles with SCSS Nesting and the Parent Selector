@@ -1,0 +1,21 @@
+Organize Styles with SCSS Nesting and the Parent Selector
+
+SCSS nesting can produce DRYer code by targeting child elements without having to write the parent class. Nesting up to 3 levels deep can help us understand relationships between styles. The SCSS parent selector represents the parent class, so it can DRY up targeting pseudo-elements/classes and be an asset for naming conventions. In this lesson we learn how to remove the redundancy of targeting pseudo-elements/classes, and child elements by taking advantage of SCSS’s nesting and parent selectors
+
+In the HTML, we have our Spider-man class and an image. Let's add some styles in our SCSS file and nest the image. When we look at the compiled CSS, we can see that the image is a descendant of Spider-man. Great. Let's use a transition on hover instead.
+
+The ampersand is the parent selector. It represents the direct parent, or in this instance, the image element. We can add pseudo-classes like hover to the parent selector. Let's compile and check out the CSS. Already our code is drier. We can also nest pseudo-elements with the parent selector. This time the Spider-man class is the parent.
+
+The parent selector is also great for naming conventions. We can use it to put Spider-man in a container. Now that we have our Spider-man container, let's add it to the HTML. We can use the parent selector as much as we want in a styling declaration. When we hover on a Spider-man container, rotate Spider-man, both of the parent selectors mean 'Spider-man'. We need to add the transition to the Spider-man class, check it out on the browser. Cool, it works.
+
+But it would be super easy to make the mistake of nesting the hover in the container. Let's comment these existing ones out real quick and add them to the container. And when we compile and check out the CSS, we're targeting the wrong class.
+
+And even when we're targeting the right elements, this could be hard to read when scanning the file for a specific style. We also need to avoid nesting too deep. The convention is three or four levels deep. Let's try to keep it at three.
+
+We have our description class at two levels deep. Let's add a header descendant and a link that's a descendant of the header and then add your pseudo-element after that. Let's go ahead and add the new styles to the HTML, compile, and check out the browser. Great. But that's five levels deep.
+
+It's the same rule as writing CSS. Too much specificity is brittle. We can be less specific by moving the link up to the same level as description. We could even give it a class name that suggests a relationship and update the HTML with a new class name, compile, and check out the browser. Nice.
+
+Nesting and the parent selector are powerful tools -- but with great power comes great responsibility. Nesting dries up the code and clarifies relationships between styles like an object in an OOP language.
+
+As opposed to processing all the styles appended to the Spider-man class in order to understand their relationships, we can nest children. We can use the parent selector to nest pseudo-classes and elements, and it's great for naming conventions. But we have to remember its meaning changes based on where it's nested. Overusing it can make the code hard to scan or grok. Stick to the convention of nesting only through three or four levels deep to avoid confusion and writing overly-specific styles.

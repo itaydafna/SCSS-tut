@@ -1,15 +1,45 @@
-@import url(../css/other.css);
-.red {
-  color: red; }
+.spiderman {
+    padding: 1rem 2rem;
+    transition: transform .8s ease-in-out;
+}
 
-.red-dark {
-  color: #990000; }
+.spiderman-container {
+    background-color: #dbbebe;
+}
 
-.blue {
-  color: #b3b3ff; }
+.spiderman-container:hover .spiderman {
+    transform: rotate(180deg);
+}
 
-.blue {
-  color: yellow; }
+.spiderman::before {
+    display: block;
+    content: url("http://www.gifs-paradise.com/animations/animated-gifs-spiders-147.gif");
+}
 
-.color {
-  color: rebeccapurple; }
+.spiderman img {
+    transition: transform .8s ease-in-out;
+}
+
+.spiderman img:hover {
+    transform: rotate(360deg);
+}
+
+.spiderman .description {
+    color: darkred;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.spiderman .description .header {
+    font-size: 2rem;
+}
+
+.spiderman .description-link {
+    text-decoration: none;
+}
+
+.spiderman .description-link::after {
+    content: url("http://www.hkpro.com/forum/customavatars/avatar11229_2.gif");
+    display: inline-block;
+    vertical-align: middle;
+}
