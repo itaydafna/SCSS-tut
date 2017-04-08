@@ -1,0 +1,4 @@
+Use Standard Built-in SCSS Functions for Common Operations:
+
+We can use javascript for color and opacity variations, math, list and map logic or to see if something exists. SCSS includes functions for a wide range of common use cases for logic in our styles. In this lesson we look at some of the more useful color functions to improve development velocity, readability, and simplify the code. Be sure to checkout all the SCSS functions: http://sass-lang.com/documentation/Sass/Script/Functions.html
+
