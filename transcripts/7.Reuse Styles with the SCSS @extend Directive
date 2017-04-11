@@ -1,0 +1,58 @@
+We can write reusable styles with the SCSS @extend or @mixin directives. Which one is better? It depends. A better question is, how do they differ?
+Extends:
+change the source order, mixins don’t.
+maintain relationships, mixins don’t.
+share inherited traits, mixins don’t.
+can extend multiple classes, mixins don’t.
+can create multiple class declarations in the compiled CSS, mixins don’t.
+can use the placeholder selector, mixins don’t.
+
+Mixins:
+can accept arguments, extends don’t.
+can pass additional content, extends don’t.
+repeat code when compiled, extends group class names together.
+work well wIth media queries, extends have a limited interaction wIth media queries.
+
+In this lesson we learn about writing reusable styles with the @extend directive and how it compares to the @mixin directive.
+
+The Sass extend works just like extending the class in a OOP language. Start with a base class, make a new class, and extend the base class.
+
+In the compiled CSS, the new class has inherited the trait from the base class, and the class names have been grouped together. When we add more traits to the new class, the new trait comes after the inherited trait.
+
+We expect the class that was defined in the SCSS to be in the same place in the compiled code, but Sass extend changes the source order.
+
+The class name with the extended or inherited traits is compiled where the base class is defined. The traits that aren't extended come later in the cascade.
+
+Extend also maintains relationships. If the base class has a compound selector, the new class will too. If it has a child class, so will the new class. If there is a base class that has a child with a base class, then every permutation will be compiled.
+
+First, the original declaration, then the new class that has a child with a base class, vice versa. Finally, a new class that has a child with a new class.
+
+It's not important to remember every possible combo. Just remember that the extended class will maintain whatever relationship the base class has.
+
+The parent selector represents whatever class it's nested in, which means that pseudo-elements and classes are inherited too because they are states or part of the class.
+
+If we use the parent selector to create a new class name, it won't get inherited because it's a different class. We'd have to extend that class in order for the new class to inherit that trait. Again, base stuff is a completely different class, unlike the pseudo-class or pseudo-element.
+
+We can also extend multiple classes. This is where the Sass extend differs from most OOP languages. It doesn't matter that the call class is extended before the base stuff class. What matters is the order that the call and base stuff classes were declared. If we're not careful, we might overwrite a necessary trait.
+
+Also notice that new class styles are spread over multiple declarations in the CSS. This can be hard to read and make debugging in the browser difficult. We can also extend one class multiple times. Before we go crazy extending all the things, we need to think about the impact it'll have. Again, this can be hard to read and make debugging difficult.
+
+Another great feature is the placeholder selector. It's not a class. It's a placeholder for a class that gets extended. Only classes that extend the placeholder get compiled.
+
+Another cool thing about the extend is placeholders can be interpolated. Let's make a mixin that accepts a variable that will be extended. Now, we need some placeholders to be extended and some classes that include the mixin.
+
+Notice how we're passing the type of character to be extended to the mixin. Again, notice the source order. The villain placeholder is defined after the hero placeholder.
+
+Even though we define the villain classes before the hero classes, the extended villain classes are compiled after the hero classes, but the traits they get from the mixin are compiled before the hero classes because mixins don't change the source order.
+
+How do extends compare to mixins? Mixins can accept arguments. Those arguments can have default values, and mixins can have variable arguments. Extends don't have arguments.
+
+Mixins can be included in media queries, and they can allow content to be passed when included. Extends can't pass content. However, mixins aren't dry. They repeat code every time they're included.
+
+Extends work with media queries, but not the way we would expect them to. Because the villain placeholder is outside of the media query, it doesn't work.
+
+We could put a placeholder inside the media query, or we could put the placeholder in an identical media query. Notice how both media queries are screened and min width 800 px.
+
+On the plus side, unlike mixins, extends are dry because they share inherited traits. Extends maintain relationships. Mixins don't. They can be hard to read because the compiled code gets split into multiple declarations or because of selector overload.
+
+Finally, it's worth repeating that extends change the source order. This can be an advantage when used wisely, but a big problem if forgotten.
