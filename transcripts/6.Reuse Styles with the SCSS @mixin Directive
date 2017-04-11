@@ -1,0 +1,13 @@
+Reuse Styles with the SCSS @mixin Directive
+
+Copy/pasting the same code is redundant and updating copy/pasted code slows development velocity. Mixins are reusable chunks of code that are included, similar to calling a function, instead of copy/pasted.
+
+Mixins have some nice features:
+- Arguments just like functions.
+- Arguments can have default values and optional values.
+- Named arguments allow us to use optional and default arguments when the mixin is included.
+- Variable arguments allow us to have a dynamic number of arguments when the mixin is included.
+- The @content directive allow us to add additional styles when the mixin is included.
+
+In this lesson we learn how to DRY up the code with the SCSS @mixin directive and make copy/paste a thing of the past.
+
